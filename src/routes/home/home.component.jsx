@@ -33,7 +33,6 @@ const Home = () => {
 
   return (
     <div>
-      <Outlet />
       <Categories categories={categories} />
     </div>
   );
