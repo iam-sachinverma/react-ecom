@@ -22,22 +22,27 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
-const provider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
 
-provider.setCustomParameters({
+googleProvider.setCustomParameters({
   prompt: "select_account",
 });
 
 export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGooglePopup = () =>
+  signInWithPopup(auth, googleProvider);
 
+export const signInWithGoogleRedirect = () =>
+  signInWithRedirect(auth, googleProvider);
+
+// FireStore DB
 export const db = getFirestore(firebaseApp);
 export const createUserDocumentFromAuth = async (userAuth) => {
   // docRef refers to a document location in a Firestore database
   const userDocRef = doc(db, "users", userAuth.uid); // db, collection_name, unique_id
   console.log(userDocRef);
 
-  // Doc Snapshot contains data read from a doc in your Firestore database and also allow us to acces data
+  // Doc Snapshot contains data read from a doc in your Firestore database and also allow us to access data
   const userSnapshot = await getDoc(userDocRef);
   console.log(userSnapshot);
   // exists() property to explicitly verify a document's existence.
