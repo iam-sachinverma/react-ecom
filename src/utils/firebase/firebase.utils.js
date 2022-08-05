@@ -6,6 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 // Firebase FireStore
@@ -83,3 +84,7 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
 // sign out
 export const signOutUser = async () => await signOut(auth);
+
+// auth observer
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
