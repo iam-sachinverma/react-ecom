@@ -8,7 +8,7 @@
 </h3>
 
 <p align="center">
-A fictional **online clothing store** made with **React**. Features include: user authentication, shopping cart, checkout, payments with Stripe & data persistence.
+A fictional online clothing store made with React. Features include: User Authentication, Shopping cart, Checkout, Payments with Stripe & Data persistence.
 </p>
 
 </br>
