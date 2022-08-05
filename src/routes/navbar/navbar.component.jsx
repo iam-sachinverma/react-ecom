@@ -11,8 +11,7 @@ const Navbar = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
 
   const signOutHandler = async () => {
-    const rep = await signOutUser();
-    console.log(rep);
+    await signOutUser();
     setCurrentUser(null);
   };
 
