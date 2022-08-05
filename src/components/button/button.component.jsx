@@ -1,4 +1,3 @@
-import { Children } from "react";
 import "./button.styles.scss";
 
 const BUTTON_TYPE_CLASSES = {
