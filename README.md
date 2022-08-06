@@ -48,7 +48,7 @@ Technologies that I used to develop this project
 **Clone the project and access the folder**
 
 ```bash
-$ git clone https://github.com/alxrdev/crwn-clothing.git
+$ git clone https://github.com/iam-sachinverma/react-ecom.git
 ```
 
 **Follow the steps below**
