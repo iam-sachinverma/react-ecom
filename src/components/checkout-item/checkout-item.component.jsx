@@ -7,14 +7,14 @@ import "./checkout-item.styles.scss";
 const CheckoutItem = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
 
-  const { addItemToCart, removeItemFromCart } = useContext(CartContext);
+  const { addItemToCart, removeItemFromCart, clearItemFromCart } =
+    useContext(CartContext);
 
-  const IncrementQuantityHandler = (event) => {
-    event.preventDefault();
-    addItemToCart(cartItem);
-  };
+  const IncrementQuantityHandler = () => addItemToCart(cartItem);
 
   const DecrementQuantityHandler = () => removeItemFromCart(cartItem);
+
+  const clearItemHandler = () => clearItemFromCart(cartItem);
 
   return (
     <div className='checkout-item-container'>
@@ -35,7 +35,9 @@ const CheckoutItem = ({ cartItem }) => {
 
       <span className='price'>{price}</span>
 
-      <button className='remove-button'> X </button>
+      <div className='remove-button' onClick={clearItemHandler}>
+        &#10005;
+      </div>
     </div>
   );
 };
