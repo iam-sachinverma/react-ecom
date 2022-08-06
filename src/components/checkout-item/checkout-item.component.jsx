@@ -10,9 +10,9 @@ const CheckoutItem = ({ cartItem }) => {
   const { addItemToCart, removeItemFromCart, clearItemFromCart } =
     useContext(CartContext);
 
-  const IncrementQuantityHandler = () => addItemToCart(cartItem);
+  const addItemHandler = () => addItemToCart(cartItem);
 
-  const DecrementQuantityHandler = () => removeItemFromCart(cartItem);
+  const removeItemHandler = () => removeItemFromCart(cartItem);
 
   const clearItemHandler = () => clearItemFromCart(cartItem);
 
@@ -23,15 +23,15 @@ const CheckoutItem = ({ cartItem }) => {
       </div>
       <span className='name'>{name}</span>
 
-      <div className='quantity'>
-        <span className='arrow' onClick={IncrementQuantityHandler}>
-          +
-        </span>
+      <span className='quantity'>
+        <div className='arrow' onClick={removeItemHandler}>
+          &#10094;
+        </div>
         <span className='value'>{quantity}</span>
-        <span className='arrow' onClick={DecrementQuantityHandler}>
-          -
-        </span>
-      </div>
+        <div className='arrow' onClick={addItemHandler}>
+          &#10095;
+        </div>
+      </span>
 
       <span className='price'>{price}</span>
 
