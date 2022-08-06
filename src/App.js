@@ -12,7 +12,7 @@ const App = () => {
       <Route path='/' element={<Navbar />}>
         {/* when parent comp empty / index attribut will excute */}
         <Route index element={<Home />}></Route>
-        <Route path='shop' element={<Shop />}></Route>
+        <Route path='shop/*' element={<Shop />}></Route>
         <Route path='auth' element={<Authentication />}></Route>
         <Route path='checkout' element={<Checkout />}></Route>
       </Route>
