@@ -3,7 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 
 import { ReactComponent as CrownLogo } from "../../assets/crown.svg";
 
-import CardIcon from "../../components/cart-icon/card-icon.component";
+import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
 import { UserContext } from "../../contexts/user.context";
@@ -39,7 +39,7 @@ const Navbar = () => {
           ) : (
             <NavLink to='/auth'>SIGN IN</NavLink>
           )}
-          <CardIcon />
+          <CartIcon />
         </NavLinks>
 
         {/* short circuting */}
