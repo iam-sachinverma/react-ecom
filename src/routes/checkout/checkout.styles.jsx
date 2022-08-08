@@ -8,11 +8,13 @@ export const HeaderBlock = styled.div`
     width: 8%;
   }
 `;
+
 export const Total = styled.span`
   margin-top: 30px;
   margin-left: auto;
   font-size: 36px;
 `;
+
 export const CheckoutHeader = styled.div`
   width: 100%;
   padding: 10px 0;
@@ -20,6 +22,7 @@ export const CheckoutHeader = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid darkgrey;
 `;
+
 export const CheckoutContainer = styled.div`
   width: 55%;
   min-height: 90vh;
