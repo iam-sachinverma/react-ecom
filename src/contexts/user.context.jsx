@@ -17,6 +17,7 @@ const USER_ACTION_TYPES = {
   SET_CURRENT_USER: "SET_CURRENT_USER",
 };
 
+// reducer function()
 const userReducer = (state, action) => {
   // console.log("Dispatched");
   // console.log(action);
