@@ -14,11 +14,13 @@ import { useDispatch } from "react-redux/es/exports";
 import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
 
 const Shop = () => {
+  // dispatch action
   const dispatch = useDispatch();
 
   useEffect(() => {
     const getCategoriesMap = async () => {
       const categoriesArray = await getCategoriesAndDocuments();
+      // dispatching action in reducer
       dispatch(setCategories(categoriesArray));
     };
     getCategoriesMap();

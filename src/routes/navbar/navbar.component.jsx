@@ -25,6 +25,8 @@ const Navbar = () => {
   // const currentUser = useSelector((state) => state.user.currentUser);
   const currentUser = useSelector(selectCurrentUser);
 
+  // console.log("render/re-rendering Navbar component");
+
   const { isCartOpen } = useContext(CartContext);
 
   return (

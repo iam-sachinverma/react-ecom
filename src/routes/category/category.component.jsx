@@ -4,20 +4,23 @@ import { useParams } from "react-router-dom";
 import ProductCard from "../../components/product-card/product-card.component";
 
 import { useSelector } from "react-redux";
-import { selectCategories } from "../../store/categories/category.selector";
+import { selectCategoriesMap } from "../../store/categories/category.selector";
 
 import "./category.styles.scss";
 
 const Category = () => {
   const { category } = useParams();
 
-  const categories = useSelector(selectCategories);
+  console.log("render/re-rendering category component");
 
-  const [products, setProducts] = useState(categories[category]);
+  const categoriesMap = useSelector(selectCategoriesMap);
+
+  const [products, setProducts] = useState(categoriesMap[category]);
 
   useEffect(() => {
-    setProducts(categories[category]);
-  }, [category, categories]);
+    console.log("effect fire calling setProduct");
+    setProducts(categoriesMap[category]);
+  }, [category, categoriesMap]);
 
   return (
     <Fragment>

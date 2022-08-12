@@ -4,6 +4,7 @@ const CATEGORIES_INITIAL_STATE = {
   categories: [],
 };
 
+// action and state both are {}
 export const categoriesReducer = (
   state = CATEGORIES_INITIAL_STATE,
   action = {}
