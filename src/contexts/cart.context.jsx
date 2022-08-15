@@ -134,12 +134,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const setIsCartOpen = (bool) => {
-    /* 
-      dispatch({ type: CART_ACTION_TYPES.SET_IS_CART_OPEN, payload: bool })
-      we use createAction helper fucntion to pass value without key:value of action
-      obj
-
-    */
     dispatch(createAction(CART_ACTION_TYPES.SET_IS_CART_OPEN, bool));
   };
 

@@ -1,5 +1,5 @@
 import { compose, createStore, applyMiddleware } from "redux";
-import logger from "redux-logger";
+// import logger from "redux-logger";
 
 import { rootReducer } from "./root-reducer";
 
@@ -10,7 +10,7 @@ const loggerMiddleware = (store) => (next) => (action) => {
     return next(action);
   }
 
-  console.log("type : ", action.type);
+  // console.log("type : ", action.type);
   console.log("payload : ", action.payload);
   console.log("current_state : ", store.getState());
 
