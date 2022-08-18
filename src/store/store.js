@@ -1,11 +1,9 @@
 import { compose, createStore, applyMiddleware } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
-
 import storage from "redux-persist/lib/storage";
-
 import { rootReducer } from "./root-reducer";
-
 import { loggerMiddleware } from "./middleware/logger";
+import thunk from "redux-thunk";
 
 const persistConfig = {
   key: "root",
@@ -15,9 +13,9 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// logger only in development enviroment .filter() to pass empty arr when false
 const middlewares = [
   process.env.NODE_ENV !== "production" && loggerMiddleware,
+  thunk,
 ].filter(Boolean);
 
 const composedEnhancer =

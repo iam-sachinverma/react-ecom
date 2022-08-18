@@ -7,24 +7,25 @@ import Category from "../category/category.component";
 import "./shop.styles.scss";
 
 // redux
-import { setCategories } from "../../store/categories/category.action";
+import { fetchCategoriesAsync } from "../../store/categories/category.action";
 import { useDispatch } from "react-redux/es/exports";
-
-// firebase
-import { getCategoriesAndDocuments } from "../../utils/firebase/firebase.utils";
 
 const Shop = () => {
   // dispatch action
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const getCategoriesMap = async () => {
-      const categoriesArray = await getCategoriesAndDocuments();
-      // dispatching action in reducer
-      dispatch(setCategories(categoriesArray));
-    };
-    getCategoriesMap();
-  }, [dispatch]);
+    dispatch(fetchCategoriesAsync());
+  }, []);
+
+  // useEffect(() => {
+  //   const getCategoriesMap = async () => {
+  //     const categoriesArray = await getCategoriesAndDocuments();
+  //     // dispatching action in reducer
+  //     dispatch(setCategories(categoriesArray));
+  //   };
+  //   getCategoriesMap();
+  // }, [dispatch]);
 
   return (
     <Routes>
