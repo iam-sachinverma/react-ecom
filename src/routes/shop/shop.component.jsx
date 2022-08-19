@@ -16,16 +16,7 @@ const Shop = () => {
 
   useEffect(() => {
     dispatch(fetchCategoriesAsync());
-  }, []);
-
-  // useEffect(() => {
-  //   const getCategoriesMap = async () => {
-  //     const categoriesArray = await getCategoriesAndDocuments();
-  //     // dispatching action in reducer
-  //     dispatch(setCategories(categoriesArray));
-  //   };
-  //   getCategoriesMap();
-  // }, [dispatch]);
+  }, [dispatch]);
 
   return (
     <Routes>
